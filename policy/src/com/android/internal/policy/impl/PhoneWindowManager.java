@@ -5736,7 +5736,8 @@ public class PhoneWindowManager implements WindowManagerPolicy {
             }
         }
 
-        if (useHapticFeedback) {
+        if (useHapticFeedback && mDisplay != null
+                && mDisplay.getState() != Display.STATE_OFF) {
             performHapticFeedbackLw(null, HapticFeedbackConstants.VIRTUAL_KEY, false);
         }
 

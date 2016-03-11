@@ -982,6 +982,7 @@ public class KeyguardViewMediator extends SystemUI {
                    || (why == WindowManagerPolicy.OFF_BECAUSE_OF_USER && !lockImmediately)) {
                 doKeyguardLaterLocked();
             } else {
+				SystemClock.sleep(1000);
                 doKeyguardLocked(null);
             }
         }
@@ -1021,6 +1022,7 @@ public class KeyguardViewMediator extends SystemUI {
         if (timeout <= 0) {
             // Lock now
             mSuppressNextLockSound = true;
+			SystemClock.sleep(1000);
             doKeyguardLocked(null);
         } else {
             // Lock in the future
